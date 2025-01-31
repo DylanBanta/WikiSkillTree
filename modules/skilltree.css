@@ -1,0 +1,9 @@
+#skill-tree-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+svg {
+    border: 1px solid #ccc;
+    background: white;
+}

@@ -1,0 +1,46 @@
+{
+	"name": "SkillTree",
+	"author": "Dylan Banta",
+	"url": "https://www.mediawiki.org/wiki/Extension:SkillTree",
+	"description": "Uses D3.js to create dynamic skill trees. Built for my WIP Tabletop RPG Luterra.",
+	"version": "0.0.1",
+	"license-name": "MIT License",
+	"type": "specialpage",
+	"requires": {
+		"MediaWiki": ">=1.41"
+	},
+	"AutoloadClasses": {
+		"SpecialSkillTree": "includes/SpecialSkillTree.php"
+	},
+	"SpecialPages": {
+		"SkillTree": "SpecialSkillTree"
+	},
+	"MessagesDirs": {
+		"SkillTree": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.skilltree": {
+			"scripts": [
+				"extensions/SkillTree/modules/skilltree-force.js",
+				"extensions/SkillTree/modules/skilltree-tree.js"
+			],
+			"styles": [
+				"extensions/SkillTree/modules/skilltree.css"
+			],
+			"externalScripts": [
+				"https://d3js.org/d3.v6.min.js"
+			]
+		}
+	},
+	"Hooks": {
+		"ParserFirstCallInit": "SpecialSkillTree::onParserFirstCallInit"
+	},
+	"MagicWords": {
+		"skilltree": {
+			"0": "skilltree"
+		}
+	},
+	"manifest_version": 2
+}
